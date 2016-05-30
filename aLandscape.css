@@ -1,0 +1,208 @@
+html, body {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	
+}
+a {
+	color: #669;
+	text-decoration: center;
+}
+p {
+	color: white;
+	
+}
+div {
+	color: white;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+.date{
+	position: fixed;
+	text-align: center;
+	//border: 2px solid red; 
+	display: inline-block;
+}
+#tiktok{
+	font-size: 400%;
+	height: 10%;
+	width:10%;
+	top: 0%;
+	left:4%;
+}
+#dayname{
+	font-size: 100%;
+	height: 3%;
+	width:10%;
+	top: 11%;
+	left:4%;
+}
+#monthnumber{
+	font-size: 500%;
+	height: 10%;
+	width: 10%;
+	top: 11.5%;
+	left:4%;
+}
+#mon{
+	font-size: 170%;
+	height: 3%;
+	width:10%;
+	top: 20.7%;
+	left:4%;
+}
+#myyear{
+	font-size: 120%;
+	height: 3%;
+	width:10%;
+	top: 25%;
+	left:4%;
+}
+#myweek{
+	font-size: 150%;
+	height: 5%;
+	width:10%;
+	top: 28.5%;
+	left:4%;
+}
+#myVideo{
+	border: 5px solid red;
+	position: fixed;
+	visibility: hidden;
+	z-index: 10;
+}
+#myImage{
+	position: fixed;
+	visibility: hidden;
+	border: 2px solid red;
+   	left: 30vw;
+   	top: 1vw;
+}
+
+#here1{
+	position: fixed;
+	visibility: hidden;
+	left: 200px;
+	top: 20px;
+	font-size: 200%;
+	color: red;
+}
+#here{
+	color: red;
+	visibility: hidden;
+	font-size: 200%;
+}
+#divv{
+	
+	border: 2px solid red;
+	position: absolute;
+	left: 5%;
+	bottom: 0%;
+	color: white;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+#city{
+	position: relative;
+	left: 10vw;
+	font-size: 30pt;
+}
+#mypic{
+	position: fixed;
+	height: 96%;
+	width: 54%;
+	top: 2%;
+	left: 18.5%;
+	z-index: 0;
+	border: 2px solid red; 
+	overflow: visible;
+		
+}
+#logo{
+	position: fixed;
+	height: 14.2%;
+	width: 8%;
+	top: 2%;
+	left: 90%;
+	z-index: 0;
+	border: 2px solid red; 
+	overflow: visible;	
+}
+.dayperiod{
+	position: fixed; 
+	color: orange;
+	font-size:80%;
+	//border: 1px solid red; 
+	height: 2%; 
+	width: 5%; 
+	
+}
+.wtext{
+	
+	position: fixed; 
+	height: 2%; 
+	width: 6%;
+	color:#B3B3B3;
+	font-size:90%;	
+	//border: 2px solid red;
+}
+
+.wunit{
+	
+	position: fixed; 
+	height: 2%; 
+	width: 2%;
+	color:#B3B3B3;
+	font-size:90%;	
+	//border: 2px solid red; 
+	text-align: right;
+}
+.wtemp{
+	position: fixed; 
+	//border: 2px solid red; 
+	height: 4%; 
+	width: 7%; 
+	font-size:200%;	
+}
+.wdesc{
+	position: fixed; 
+	//border: 1px solid red; height: 3%; 
+	width: 15%;
+	height: 2%;
+	font-size: 70%;
+	text-align: center;
+}
+.wdetail{
+	position: fixed; 
+	//border: 2px solid red; 
+	height: 2%; 
+	width: 2.5%;
+	font-size:80%;
+}
+
+.wimg{
+	position: fixed; 
+	//border: 2px solid red; 	
+}
+.lines{
+	position: fixed; 
+	border: 2px solid red; 	
+	height: 6%; 
+	width: 23%;
+	text-align: left;
+}
+#CWcondition{
+	position:fixed; 
+	top:59.3%; 
+	left:1.6%;
+	border: 0px solid red;
+	height:4%;
+	width:15%;
+	text-align: center;
+	font-size: 100%;
+}
+

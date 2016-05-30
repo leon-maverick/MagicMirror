@@ -1,0 +1,469 @@
+html, body {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+font-weight: bold;
+	
+}
+a {
+	color: #white;
+	text-decoration: center;
+}
+p {
+	color: white;
+	
+}
+div {
+	color: white;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+.wcenti{
+	position: fixed; 
+	//border: 2px solid red; 
+	height: 4%; 
+	width: 7%; 
+	font-size:150%;	
+	font-weight: normal;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);	
+}
+.date{
+	position: fixed;
+	text-align: center;
+	border: 1px solid red; 
+	display: inline-block;
+}
+#tiktok{
+	//border: 1px solid red;
+	position: fixed;
+	font-size: 600%;
+	height: 10%;
+	width:10%;
+	top: 82%;
+	left:1%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#dayname{
+	//border: 1px solid red;
+	position: fixed;
+	
+	height: 3%;
+	width:10%;
+	top: 86%;
+	left: 10%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#monthnumber{
+	//border: 1px solid red;
+	font-size: 500%;
+	height: 10%;
+	width: 10%;
+	top: 82%;
+	left: 6.5%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#mon{
+	font-size: 170%;
+	height: 3%;
+	width: 10%;
+	top: 85.4%;
+	left: 9.5%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#myyear{
+	font-size: 300%;
+	height: 3%;
+	width:10%;
+	top: 85.4%;
+	left:11.5%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#firstline0{
+	font-size: 200%;
+	height: 5%;
+	width:10%;
+	top: 88.5%;
+	left:15%;
+	color: red;
+	//word-break: break-all;
+	white-space: nowrap;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+
+#firstline1{
+	font-size: 200%;
+	height: 5%;
+	width: 10%;
+	top: 70%;
+	left:15%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#secondline0{
+	font-size: 200%;
+	height: 5%;
+	width:10%;
+	top: 90%;
+	left:17%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+
+#secondline1{
+	font-size: 200%;
+	height: 5%;
+	width:10%;
+	top: 71%;
+	left:17%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+
+#datebox{
+	position: fixed;
+	top:840px;
+	left:7.6%; 
+	height: 200px;
+	width: 200px;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#rcondition{
+	position:fixed; 
+	top:10%; 
+	left:18%;
+	//border: 0px solid red;
+	height:4%;
+	width:16%;
+	text-align: center;
+	font-size: 130%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#TempAndHumidity{
+	position: fixed;
+	top:85%;
+	left: 29%; 
+	height: 160px;
+	width: 55px;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#RTemp{
+	position:fixed; 
+	top: 6.5%; 
+	left: 26%;
+	//border: 0px solid red;
+	height:5%;
+	width:7%;
+	text-align: center;
+	font-size: 300%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#RRH{
+	position:fixed; 
+	top: 6.5%; 
+	left: 30.4%;
+	//border: 0px solid red;
+	height:5%;
+	width:7%;
+	text-align: center;
+	font-size: 300%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#CWcondition{
+	position:fixed; 
+	top:59.3%; 
+	left:-4.5%;
+	//border: 0px solid red;
+	height:4%;
+	width:15%;
+	text-align: center;
+	font-size: 120%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#Cdesc{
+	position:fixed; 
+	top: 59.3%; 
+	left: -23px;
+	font-size: 100%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#myVideo{
+	/*border: 1px solid red;
+	position: fixed;
+	visibility: hidden;
+	z-index: 10;*/
+
+	max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+.Vframe {  
+    height: 96.0468%;
+	width: 54%;
+    position: relative;
+    border: 1px solid red;
+    top: -7%;
+    left: 35%;
+    transform: rotate(270deg);
+   -webkit-transform: rotate(270deg);
+
+}
+
+#myImage{
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+
+.Iframe {  
+    height: 96.0468%;
+	width: 54%;
+    position: relative;
+    //border: 1px solid red;
+    top: -7%;
+    left: 35%;
+    transform: rotate(270deg);
+   -webkit-transform: rotate(270deg);
+
+}
+
+#myLogo{
+	max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+.Lframe {  
+    height: 14.2291%;
+    width: 8%;
+    position: relative;
+    //border: 1px solid red;
+    top: -110.1%;
+    left: 90.5%;
+    z-index: 10;
+    transform: rotate(270deg);
+   -webkit-transform: rotate(270deg);
+}
+
+
+
+#here1{
+	position: fixed;
+	visibility: hidden;
+	left: 10px;
+	top: 200px;
+	font-size: 200%;
+	color: red;
+}
+#here{
+	color: red;
+	visibility: hidden;
+	font-size: 200%;
+}
+
+
+.dayperiod{
+	position: fixed; 
+	color: orange;
+	font-size:80%;
+	//border: 1px solid red; 
+	height: 2%; 
+	width: 5%; 
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+	
+}
+.wtext{
+	
+	position: fixed; 
+	height: 2%; 
+	width: 6%;
+	font-size:130%;	
+	//border: 1px solid red;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+
+.wunit{
+	
+	position: fixed; 
+	height: 2%; 
+	width: 2%;
+	font-size:130%;	
+	//border: 1px solid red; 
+	text-align: right;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+.wtemp{
+	position: fixed; 
+	//border: 2px solid red; 
+	height: 4%; 
+	width: 7%; 
+	font-size:200%;	
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+.wdesc{
+	position: fixed; 
+	//border: 1px solid red; height: 3%; 
+	width: 10%;
+	height: 2%;
+	font-size: 80%;
+	text-align: center;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+.wdetail{
+	position: fixed; 
+	//border: 1px solid red; 
+	height: 2%; 
+	width: 2.5%;
+	font-size:170%;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+
+.wimg{
+	position: fixed; 
+	//border: 2px solid red;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+        visibility: hidden;
+}
+.wline{
+	position: fixed; 
+	//border: 2px solid red;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+
+.lines{
+	position: fixed; 
+	//border: 1px solid red; 	
+	height: 6%; 
+	width: 35%;
+	text-align: left;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+#mycity{
+	position:fixed; 
+	top: 20%; 
+	left: -2.3%; 
+	//border: 1px solid red; 
+	height: 3%; 
+	width: 10%; 
+	overflow:visible;
+	text-align: center;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+.WtableLine{
+	position: fixed; 
+	//border: 2px solid red;
+	top: 230px;
+	width: 421px;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+.WbtableLine{
+	position: fixed; 
+	//border: 2px solid red;
+	top: 100px;
+	width: 161px;
+	transform: rotate(270deg);
+   	-webkit-transform: rotate(270deg);
+}
+
+#lineW1{
+	left: 200px;
+	height: 2px;
+}
+#lineW2{
+	left: 108px;
+	height: 1px;
+}
+#lineW3{
+	left: 20px;
+	height: 1px;
+}
+#lineW4{
+	left: -70px;
+	height: 1px;
+}
+#lineW5{
+	left: -160px;
+	height: 2px;
+}
+
+#lineWb1{
+	left: 300px;
+	height: 1px;
+}
+#lineWb2{
+	left: 270px;
+	height: 1px;
+}
+#lineWb3{
+	left: 210px;
+	height: 1px;
+}
+#lineWb4{
+	left: 180px;
+	height: 1px;
+}
+#lineWb5{
+	left: 120px;
+	height: 1px;
+}
+#lineWb6{
+	left: 90px;
+	height: 1px;
+}
+#lineWb7{
+	left: 30px;
+	height: 1px;
+}
+#lineWb8{
+	left: 0px;
+	height: 1px;
+}
+
+

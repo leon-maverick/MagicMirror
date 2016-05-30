@@ -1,0 +1,17 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="420px" height="370px" viewBox="0 0 420 370">
+<!--rect fill="black" width="420" height="370"/-->
+    <line fill="white" stroke="white" stroke-width="3" x1="2.509" y1="7.7009" x2="416.76" y2= "7.7009" />
+    <line fill="white" stroke="white" stroke-width="2" x1="2.509" y1="97.16" x2="416.76" y2= "97.16" />
+    <line fill="white" stroke="white" stroke-width="2" x1="2.509" y1="186.62" x2="416.76" y2= "186.62" />
+    <line fill="white" stroke="white" stroke-width="2" x1="2.509" y1="276.079" x2="416.76" y2= "276.079" />
+    <line fill="none" stroke="white" stroke-width="3" x1="2.51" y1="365.539" x2="416.76" y2= "365.539" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="35.1641" x2="413.49" y2= "35.1641" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="66.197" x2="413.49" y2= "66.197" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="124.623" x2="413.49" y2= "124.623" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="155.657" x2="413.49" y2= "155.657" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="214.083" x2="413.49" y2= "214.083" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="245.116" x2="413.49" y2= "245.116" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="303.542" x2="413.49" y2= "303.542" />
+    <line fill="#6699FF" stroke="#6699FF" stroke-width="1" x1="264.485" y1="334.576" x2="413.49" y2= "334.576" />
+</svg>

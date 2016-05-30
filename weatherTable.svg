@@ -1,0 +1,104 @@
+
+<svg     width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 1920 1080"
+ xmlns:xlink="http://www.w3.org/1999/xlink"  preserveAspectRatio="xMidYMid meet"  >
+<g id="weather_box" transform="scale(1.08 1 ) rotate(270 550 540) " >
+    <text x="645.041" y="47.2462" fill="white" font-weight="normal" font-size="30" font-family="Calibri"><tspan id="mycity"> </tspan></text>
+    <line id="first_line" fill="none" stroke="white" stroke-width="3.00074" x1="645.041" y1="57.7183" x2="1059.42" y2= "57.7183" />
+    
+    <g id="_Morning_" transform="translate(0 4)">
+        <text x="648.318" y="74.111" fill="#FFCC00" font-weight="normal" font-size="18.6725" font-family="Calibri">Morning</text>
+        <line id="morning_line" fill="none" stroke="white" stroke-width="1" x1="645.041" y1="133.806" x2="1059.42" y2= "133.806" />
+        <text x="810" y="70.0929" text-anchor="middle"  fill="white" font-weight="normal" font-size="16.0048" font-family="Calibri"><tspan id="Mdesc" > </tspan></text>
+        <text x="648.318" y="125.365" fill="white" font-weight="normal" font-size="42.5574" font-family="Calibri"><tspan id="Mtemp"> </tspan></text>
+        <text x="906.321" y="100.512" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Feels like</text>
+        <text x="907.219" y="125.196" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Wind speed</text>
+        <text x="906.53" y="76.6237" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">RH</text>
+        <text x="1005.83" y="100.143" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="Mfeel"> </tspan></text>
+        <text x="1005.83" y="125.134" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="MwindS"> </tspan></text>
+        <text x="1030.58" y="125.613" fill="white" font-weight="normal" font-size="12.0037" font-family="Calibri">km/h</text>
+        <text x="1005.83" y="76.6237" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="MRH"> </tspan></text>
+        <circle fill="none" stroke="white" stroke-width="0.67" cx="1044.75" cy="88.0495" r="1.8265"/>
+        <text x="1046" y="101" fill="white" font-weight="normal" font-size="17.4199" font-family="Calibri">C</text>
+        <text x="1043.01" y="76.6377" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri">%</text>
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="83.0123" x2="1056.14" y2= "83.0123" />
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="107.52" x2="1056.14" y2= "107.52" />
+        <image id="MW_svg"  width="53" height="53"  x="780" y="75" xlink:href="/media/maverick/01CC55BA7B6E3580/Brunata/Magic Mirror/File/Icon-font-7-weather-PIXEDEN-v-1-0-0/SVG white/moon.svg" />
+    
+    </g>
+
+    <g id="_Afternoon_" transform="translate(0 8)">
+
+        <line id="afternoon_line" fill="none" stroke="white" stroke-width="1" x1="645.041" y1="209.894" x2="1059.42" y2= "209.894" />
+
+        <text x="810" y="146.181" text-anchor="middle" fill="white" font-weight="normal" font-size="16.0048" font-family="Calibri"><tspan id="Adesc"> </tspan></text>
+        <text x="648.318" y="151.199" fill="#FFCC00" font-weight="normal" font-size="18.6725" font-family="Calibri">Afternoon</text>
+        <text x="648.318" y="201.453" fill="white" font-weight="normal" font-size="42.5574" font-family="Calibri"><tspan id="Atemp"> </tspan></text>
+        <text x="906.321" y="176.6" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Feels like</text>
+        <text x="907.219" y="201.284" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Wind speed</text>
+        <text x="906.53" y="152.712" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">RH</text>
+        <text x="1005.83" y="176.231" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="Afeel"> </tspan></text>
+        <text x="1005.83" y="201.222" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="AwindS"> </tspan></text>
+        <text x="1030.58" y="201.701" fill="white" font-weight="normal" font-size="12.0037" font-family="Calibri">km/h</text>
+        <text x="1005.83" y="152.712" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="ARH"> </tspan></text>
+        <circle fill="none" stroke="white" stroke-width="0.67" cx="1044.75" cy="164.138" r="1.8265"/>
+        <g transform="matrix(1 0 0 1 506.39 -782.071)">
+        <text x="540.5" y="960.296" fill="white" font-weight="normal" font-size="17.4199" font-family="Calibri">C</text>
+        </g>
+        <text x="1043.01" y="152.726" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri">%</text>
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="159.1" x2="1056.14" y2= "159.1" />
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="183.608" x2="1056.14" y2= "183.608" />
+        <image id="AW_svg"  width="53" height="53"  x="780" y="154" xlink:href="/media/maverick/01CC55BA7B6E3580/Brunata/Magic Mirror/File/Icon-font-7-weather-PIXEDEN-v-1-0-0/SVG white/moon.svg" />
+
+    </g>
+
+    <g id="_Evening_" transform="translate(0 12)">
+
+        <line id="evening_line" fill="none" stroke="white" stroke-width="1" x1="645.041" y1="285.981" x2="1059.42" y2= "285.981" />
+        <text x="810" y="222.268" text-anchor="middle" fill="white" font-weight="normal" font-size="16.0048" font-family="Calibri"><tspan id="Edesc"> </tspan></text>
+        <text x="648.318" y="227.287" fill="#FFCC00" font-weight="normal" font-size="18.6725" font-family="Calibri">Evening</text>
+        <text x="648.318" y="277.541" fill="white" font-weight="normal" font-size="42.5574" font-family="Calibri"><tspan id="Etemp"> </tspan></text>
+        <text x="906.321" y="252.687" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Feels like</text>
+        <text x="907.219" y="277.371" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Wind speed</text>
+        <text x="906.53" y="228.799" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">RH</text>
+        <text x="1005.83" y="252.318" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="Efeel"> </tspan></text>
+        <text x="1005.83" y="277.309" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="EwindS"> </tspan></text>
+        <text x="1030.58" y="277.788" fill="white" font-weight="normal" font-size="12.0037" font-family="Calibri">km/h</text>
+        <text x="1005.83" y="228.799" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="ERH"> </tspan></text>
+        <circle fill="none" stroke="white" stroke-width="0.67" cx="1044.75" cy="240.225" r="1.8265"/>
+        <g transform="matrix(1 0 0 1 506.39 -705.983)">
+        <text x="540.5" y="960.296" fill="white" font-weight="normal" font-size="17.4199" font-family="Calibri">C</text>
+        </g>
+        <text x="1043.01" y="228.813" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri">%</text>
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="235.188" x2="1056.14" y2= "235.188" />
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="259.695" x2="1056.14" y2= "259.695" />
+        <image id="EW_svg"  width="53" height="53"  x="780" y="230" xlink:href="/media/maverick/01CC55BA7B6E3580/Brunata/Magic Mirror/File/Icon-font-7-weather-PIXEDEN-v-1-0-0/SVG white/moon.svg" />
+
+    </g>
+
+    <g id="_Night_" transform="translate(0 16)">
+
+        <line id="night_line" fill="none" stroke="white" stroke-width="2" x1="645.041" y1="362.069" x2="1059.42" y2= "362.069" />
+        <text x="810" y="298.356" text-anchor="middle" fill="white" font-weight="normal" font-size="16.0048" font-family="Calibri"><tspan id="Ndesc"> </tspan></text>
+        <text x="648.318" y="303.374" fill="#FFCC00" font-weight="normal" font-size="18.6725" font-family="Calibri">Night</text>
+        <g>
+        <text x="648.318" y="353.628" fill="white" font-weight="normal" font-size="42.5574" font-family="Calibri"><tspan id="Ntemp"> </tspan></text>
+        </g>
+        <text x="906.321" y="328.775" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Feels like</text>
+        <text x="907.219" y="353.459" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">Wind speed</text>
+        <text x="906.53" y="304.887" fill="#B3B3B3" font-weight="normal" font-size="18.6725" font-family="Calibri">RH</text>
+        <text x="1005.83" y="328.406" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="Nfeel"> </tspan></text>
+        <text x="1005.83" y="353.397" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="NwindS"> </tspan></text>
+        <text x="1030.58" y="353.876" fill="white" font-weight="normal" font-size="12.0037" font-family="Calibri">km/h</text>
+        <text x="1005.83" y="304.887" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri"><tspan id="NRH"> </tspan></text>
+        <circle fill="none" stroke="white" stroke-width="0.67" cx="1044.75" cy="316.313" r="1.8265"/>
+        <g transform="matrix(1 0 0 1 506.39 -629.896)">
+        <text x="540.5" y="960.296" fill="white" font-weight="normal" font-size="17.4199" font-family="Calibri">C</text>
+        </g>
+        <text x="1043.01" y="304.901" fill="white" font-weight="normal" font-size="18.6725" font-family="Calibri">%</text>
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="311.275" x2="1056.14" y2= "311.275" />
+        <line fill="none" stroke="#6699FF" stroke-width="0.67" x1="907.098" y1="335.783" x2="1056.14" y2= "335.783" />
+        <image id="NW_svg"  width="53" height="53"  x="780" y="308" xlink:href="/media/maverick/01CC55BA7B6E3580/Brunata/Magic Mirror/File/Icon-font-7-weather-PIXEDEN-v-1-0-0/SVG white/sun.svg" />
+    </g>
+  
+</g>
+</svg>

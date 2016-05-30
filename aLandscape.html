@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+<title>Landscape</title>
+<link rel="stylesheet" href="aLandscape.css">
+<script src="jalali.js"></script>
+<script src="hijrical.js"></script>
+
+</head>
+<body id="bodyfont" style="font-family: B Yagut;" > 
+
+<div id="TandD">
+  <div class="date" id="tiktok"> </div>
+  <div class="date" id="dayname"> </div>
+  <div class="date" id="monthnumber"> </div>
+  <div class="date" id="mon"> </div>
+  <div class="date" id="myyear"> </div>
+  <div class="date" id="myweek"> </div>
+  <img id="datebox" src="datebox.svg" style="position: fixed;top:10.5%;left:0.3%; height: 18%;width: 18%;"></img>
+</div>
+
+<div id="rcondition" style="position:fixed; top:37%; left:0.7%;border: 0px solid red;height:4%;width:16%;text-align: center;font-size: 120%;">Room conditions</div>
+<img  id="TempAndHumidity" src="TempHumidity.svg" style="position: fixed;top:40%;left: -2.7%; height: 17%;width: 17%;"></img>
+<div id="RTemp" autocomplete="off" style="position:fixed; top:41%; left:7%;border: 0px solid red;height:5%;width:7%;text-align: center;font-size: 250%;">-17.7</div>
+<div id="RRH" style="position:fixed; top:50%; left:7%;border: 0px solid red;height:5%;width:7%;text-align: center;font-size: 250%;">-17.7</div>
+
+<script id="Rtemp_show">
+  function get_RTH(filename,idname){
+    file=document.location.pathname.substr(0,document.location.pathname.length - 15 )+filename;
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function (){
+      if(rawFile.readyState == 4){
+        if(rawFile.status == 200 || rawFile.status == 0){
+          var allText = rawFile.responseText;
+            document.getElementById(idname).firstChild.nodeValue = allText;
+          }
+      }
+    }
+    rawFile.send(null);
+  }
+  get_RTH("Room_Temperature.txt","RTemp");
+  get_RTH("Room_Humidity.txt","RRH");
+  setInterval(function(){ 
+    get_RTH("Room_Temperature.txt","RTemp");
+  },1000*60*10);
+  setInterval(function(){ 
+    get_RTH("Room_Humidity.txt","RRH");
+  },1000*60*12);
+</script>
+
+
+
+<div id="CWcondition" >Current weather condition</div>
+
+<div id="current_line" style="position:fixed; top:62.3%; left:2.3%;border: 1px solid white;height:0%;width:13.5%;" > </div>
+ </div>
+<div id="Cdesc" class="wdesc" style="position:fixed; top:62.4%; left:1.5%;font-size: 100%;"> </div>
+
+<img id="CW_svg" class="wimg" src="SVG white/moon.svg" style=" width:20%;height:20%;top: 66%; left: -2%;"></img>
+
+<img id="current_line_blue" class="wimg" src="wlines.svg" style=" width:9%;height:9%;top: 90%; left: 8.3%;"></img>
+
+<!--div id="current_line1" style="position:fixed; top:92.2%; left:8.3%;border: 0.2px solid #6699FF;height:0%;width:8.5%;" > </div>
+ </div>
+<div id="current_line2" style="position:fixed; top:95.6%; left:8.3%;border: 0.2px solid #6699FF;height:0%;width:8.5%;" > </div>
+ </div-->
+
+<div id="CRH" class="wdetail" style="position:fixed; top:90%; left:13.6%;"> </div>
+<div id="Cfeel" class="wdetail" style="position:fixed; top:92.8%; left:13.6%;"> </div>
+<div id="CwindS" class="wdetail" style="position:fixed; top:96%; left:13.6%;"> </div>
+
+<div id="Ctemp" class="wtemp" style="position:fixed; top:90%; left:-2%;font-size:270%;text-align:right;"> </div>
+<div id="Ctemp_deg" class="wtemp" style="position:fixed; top:90.6%; left:5%;font-size:170%;">°c</div>
+
+<div id="CRH_text"    class="wtext" style="top: 90%; left: 8.4%;">RH</div>  
+<div id="Cfeel_text"  class="wtext" style="top: 92.8%; left: 8.4%;">Feels like</div><div id="CwindS_text" class="wtext" style="top: 96%; left: 8.4%;font-size:73%;">Wind speed</div>
+  
+<div id="CRH_unit"    class="wunit" style="top: 90%;   left: 14.8%;">%</div> 
+<div id="Cfeel_unit"  class="wunit" style="top: 92.8%; left: 14.8%;">°c</div>  
+<div id="CWindS_unit" class="wunit" style="top: 96%;   left: 14.8%;font-size:68%;">km/h</div>
+  
+
+<div id="mypic">
+</div>
+
+
+<div id="logo">
+</div>
+
+<img id="mylogo" src="Medias/logo.jpg" style="position: fixed;top: 1.5%;left: 89%;height: 17.7%;width: 10%;z-index: 0;overflow: visible;"></img>
+
+<div id="lineone" class="lines" style="top: 23%;left: 75.5%;color:red;font-size:310%;">lineone</div>  
+<div id="linetwo" class="lines" style="top: 32.5%;left: 75.5%;font-size:200%;">linetwo</div>  
+<div id="linethree" class="lines" style="top: 41.7%;left: 75.5%;font-size:180%;">linethree</div>  
+<div id="linefour" class="lines" style="top: 47%;left: 75.5%;font-size:180%;">linefour</div>  
+
+
+<!--Weather Table-->
+<img  id="weatherTable" src="wtable.png" style="position: fixed;top: 61.5%;right: 1.5%;height: 36.5%;width: 23%;z-index: 0;overflow: visible;"></img>
+
+<div id="mycity" style="position:fixed; top: 59%; left: 82%; border: 0px solid red; height: 3%; width: 10%; overflow:visible;text-align: center;"> </div>
+
+<div id="_morning_">
+  <div id="morning" class="dayperiod" style="top: 62.5%; left: 75.8%;"  >Morning</div>  
+  <div id="Mtemp"   class ="wtemp"    style="top: 65%;   left: 75.8%;"  >Mtemp</div>
+  <div id="Mdesc"   class="wdesc"     style="top: 62.5%; left: 77.5%;"    >Mdesc</div>
+
+  <div id="MRH_text"    class="wtext" style="top: 62.5%; left: 90%;" font-family="B Yagut" >RH</div>  
+  <div id="Mfeel_text"  class="wtext" style="top: 65.5%; left: 90%;">Feels like</div>  
+  <div id="MwindS_text" class="wtext" style="top: 68.5%; left: 90%;font-size:73%;" font-family="B Yagut"> here</div>
+  
+  <div id="MRH_unit"    class="wunit" style="top: 62.5%; left: 96.3%;">%</div> 
+  <div id="Mfeel_unit"  class="wunit" style="top: 65.5%; left: 96.3%;">°c</div>  
+  <div id="MWindS_unit" class="wunit" style="top: 68.5%; left: 96.3%;font-size:68%;">km/h</div>
+  
+  <div id="MRH"    class="wdetail" style="top: 62.5%; left: 95.2%;" > MRH  </div>  
+  <div id="Mfeel"  class="wdetail" style="top: 65.5%; left: 95.2%;"> Mfeel</div>  
+  <div id="MwindS" class="wdetail" style="top: 68.5%; left: 95.2%;">  MwindS</div>
+  
+  <img id="MW_svg" class="wimg" width="53" height="53" src="SVG white/moon.svg" style="top: 64%; left: 83.2%;"> </img>
+</div>
+
+<div id="_afternoon_">
+  <div id="afternoon" class="dayperiod" style="top: 71.2%; left: 75.8%;">Afternoon</div>
+  <div id="Atemp" class="wtemp" style="top: 73.5%; left: 75.8%;">Atemp</div>
+  <div id="Adesc" class="wdesc" style="top: 71.1%; left: 77.5%;" > Adesc </div>
+  
+  <div id="ARH_text" class="wtext" style="top: 71.5%; left: 90%;">RH</div>
+  <div id="Afeel_text" class="wtext" style="top: 74.5%; left: 90%;">Feels like</div>
+  <div id="AwindS_text" class="wtext" style="top: 77.5%; left: 90%;font-size:73%;">Wind speed</div>
+  
+  <div id="ARH_unit" class="wunit" style="top: 71.5%; left: 96.3%;">%</div>
+  <div id="Afeel_unit" class="wunit" style="top: 74.5%; left: 96.3%;">°c</div>
+  <div id="AWindS_unit" class="wunit" style="top: 77.5%; left: 96.3%;font-size:68%;">km/h</div>
+  
+  <div id="ARH" class="wdetail" style="top: 71.5%; left: 95.2%;" > ARH </div>
+  <div id="Afeel" class="wdetail" style="top: 74.5%; left: 95.2%;" > Afeel </div>
+  <div id="AwindS" class="wdetail" style="top: 77.5%; left: 95.2%;" > AwindS </div>
+  <img id="AW_svg" class="wimg" width="53" height="53" src="SVG white/moon.svg" style="top: 73%; left: 83.2%;" ></img>
+</div>
+
+<div id="_evening_">
+  <div id="evening" class="dayperiod" style="top: 79.9%; left: 75.8%;">Evening</div>
+  <div id="Etemp" class="wtemp" style="top: 82%; left: 75.8%;"> Etemp </div>
+  <div id="Edesc" class="wdesc" style="top: 79.7%; left: 77.5%;"> Edesc </div>
+  
+  <div id="ERH_text" class="wtext" style="top: 80.4%; left: 90%;">RH</div>
+  <div id="Efeel_text" class="wtext" style="top: 83.4%; left: 90%;">Feels like</div>
+  <div id="EwindS_text" class="wtext" style="top: 86.4%; left: 90%;font-size:73%;">Wind speed</div>
+  
+  <div id="ERH_unit" class="wunit" style="top: 80.4%; left: 96.3%;">%</div>
+  <div id="Efeel_unit" class="wunit" style="top: 83.4%; left: 96.3%;">°c</div>
+  <div id="EWindS_unit" class="wunit" style="top: 86.4%; left: 96.3%;font-size:68%;">km/h</div>
+  
+  <div id="ERH" class="wdetail" style="top: 80.4%; left: 95.2%;"> ERH </div>
+  <div id="Efeel" class="wdetail" style="top: 83.4%; left: 95.2%;"> Efeel </div>
+  <div id="EwindS" class="wdetail" style="top: 86.4%; left: 95.2%;"> EwindS </div>
+  <img id="EW_svg" class="wimg" width="53" height="53" src="SVG white/moon.svg" style="top: 81.5%; left: 83.2%;"></img>
+</div>
+
+<div id="_night_">
+  <div id="night" class="dayperiod" style="top: 88.8%; left: 75.8%;">Night</div>
+  <div id="Ntemp" class="wtemp" style="top: 91%; left: 75.8%;"> Etemp </div>
+  <div id="Ndesc" class="wdesc" style="top: 88.6%; left: 77.5%;"> Edesc </div>
+  
+  <div id="NRH_text" class="wtext" style="top: 89.2%; left: 90%;">RH</div>
+  <div id="Nfeel_text" class="wtext" style="top: 92.2%; left: 90%;">Feels like</div>
+  <div id="NwindS_text" class="wtext" style="top: 95.2%; left: 90%;font-size:73%;">Wind speed</div>
+  
+  <div id="NRH_unit" class="wunit" style="top: 89.2%; left: 96.3%;">%</div>
+  <div id="Nfeel_unit" class="wunit" style="top: 92.2%; left: 96.3%;">°c</div>
+  <div id="NWindS_unit" class="wunit" style="top: 95.2%; left: 96.3%;font-size:68%;">km/h</div>
+  
+  <div id="NRH" class="wdetail" style="top: 89.2%; left: 95.2%;">ERH</div>
+  <div id="Nfeel" class="wdetail" style="top: 92.2%; left: 95.2%;">Efeel</div>
+  <div id="NwindS" class="wdetail" style="top: 95.2%; left: 95.2%;">EwindS</div>
+  <img id="NW_svg" class="wimg" width="53" height="53" src="SVG white/sun.svg" style="top: 90.5%; left: 83.3%;" ></img>
+</div>
+
+<p id="here" >here</p>
+<p id="here1">here1</p>
+
+
+<img id="myImage"  height="583" width="500" ></img>
+
+<video id="myVideo"  type="video/mp4" width="750" preload onended="swapMedia()">
+  Your browser does not support HTML5 video.
+</video>
+
+
+
+<script id="tiktik">
+	function startTime() {
+    	var today = new Date();
+    	var h = today.getHours();var m = today.getMinutes();
+    	if(m==0){m="00";}
+    	else if(m==1){m="01"}
+    	else if(m==2){m="02"}
+    	else if(m==3){m="03"}
+    	else if(m==4){m="04"}
+    	else if(m==5){m="05"}
+    	else if(m==6){m="06"}
+    	else if(m==7){m="07"}
+    	else if(m==8){m="08"}
+    	else if(m==9){m="09"}
+    	document.getElementById("tiktok").innerHTML = h+":"+m;
+    	t = setTimeout(function () {startTime()}, 2000);
+ 	}
+  	startTime();
+</script>
+
+<script id="translateWeek">
+
+  var ConfObj;
+  function readTextFile(){
+    file = document.location.pathname.substr(0,document.location.pathname.length - 15 ) + "myconfig.txt";
+    //alert(file);
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function (){
+      if(rawFile.readyState == 4){
+        if(rawFile.status == 200 || rawFile.status == 0){
+          var allText = rawFile.responseText;
+          ConfObj = JSON.parse(allText);
+        }
+      }
+    }
+    rawFile.send(null);
+  }
+  readTextFile();
+  setTimeout(function(){ readTextFile(); }, 61*1001);
+
+  //alert(0);
+  var today = new Date();
+  var month = today.getMonth(); //January is 0
+  dname = today.getDay();
+  var dd = today.getDate();
+  var yyyy = today.getFullYear();
+  //alert(dd);
+  
+
+  if (ConfObj.preferences.language == "En" || ConfObj.preferences.language == "en") lang=0;
+  else if (ConfObj.preferences.language == "Fr" || ConfObj.preferences.language == "fr") lang=1;
+  else if (ConfObj.preferences.language == "Es" || ConfObj.preferences.language == "es") lang=2;
+  else if (ConfObj.preferences.language == "Fa" || ConfObj.preferences.language == "fa")  lang=3;  
+
+    file=document.location.pathname.substr(0,document.location.pathname.length - 15 )+"language.txt";
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function (){
+      if(rawFile.readyState == 4){
+        if(rawFile.status == 200 || rawFile.status == 0){
+          var allText = rawFile.responseText;
+          var ConfObjj = JSON.parse(allText);
+
+          document.getElementsByTagName("body")[0].style.fontFamily = ConfObjj.language[lang].Font;
+
+          document.getElementById("MRH_text").innerHTML = ConfObjj.language[lang].Weather[0].H ;
+          document.getElementById("ARH_text").innerHTML = ConfObjj.language[lang].Weather[0].H ;
+          document.getElementById("ERH_text").innerHTML = ConfObjj.language[lang].Weather[0].H ;
+          document.getElementById("NRH_text").innerHTML = ConfObjj.language[lang].Weather[0].H ;
+          document.getElementById("CRH_text").innerHTML = ConfObjj.language[lang].Weather[0].H ;
+
+          document.getElementById("Mfeel_text").innerHTML = ConfObjj.language[lang].Weather[1].F ;
+          document.getElementById("Afeel_text").innerHTML = ConfObjj.language[lang].Weather[1].F ;
+          document.getElementById("Efeel_text").innerHTML = ConfObjj.language[lang].Weather[1].F ;
+          document.getElementById("Nfeel_text").innerHTML = ConfObjj.language[lang].Weather[1].F ;
+          document.getElementById("Cfeel_text").innerHTML = ConfObjj.language[lang].Weather[1].F ;
+          
+          document.getElementById("MwindS_text").innerHTML = ConfObjj.language[lang].Weather[2].WS ;
+          document.getElementById("MwindS_text").style.fontSize = ConfObjj.language[lang].Weather[2].Size ;
+         
+          document.getElementById("AwindS_text").innerHTML = ConfObjj.language[lang].Weather[2].WS ;
+          document.getElementById("AwindS_text").style.fontSize = ConfObjj.language[lang].Weather[2].Size ;
+          
+          document.getElementById("EwindS_text").innerHTML = ConfObjj.language[lang].Weather[2].WS ;
+          document.getElementById("EwindS_text").style.fontSize = ConfObjj.language[lang].Weather[2].Size ;
+
+          document.getElementById("NwindS_text").innerHTML = ConfObjj.language[lang].Weather[2].WS ;
+          document.getElementById("NwindS_text").style.fontSize = ConfObjj.language[lang].Weather[2].Size ;
+
+          document.getElementById("CwindS_text").innerHTML = ConfObjj.language[lang].Weather[2].WS ;
+          document.getElementById("CwindS_text").style.fontSize = ConfObjj.language[lang].Weather[2].Size ;
+          document.getElementById("dayname").innerHTML = ConfObjj.language[lang].WeekDay[dname].d ;
+
+          document.getElementById("morning").innerHTML = ConfObjj.language[lang].morning ;
+          document.getElementById("afternoon").innerHTML = ConfObjj.language[lang].afternoon ;
+          document.getElementById("evening").innerHTML = ConfObjj.language[lang].evening ;
+          document.getElementById("night").innerHTML = ConfObjj.language[lang].night ;
+
+
+  //alert(dd);
+          //   document.getElementById('here1').firstChild.nodeValue = (writeIslamicDate(0));
+
+             //alert(ConfObj.preferences.calendar_type);
+          if (ConfObj.preferences.calendar_type==1){//shamsi/jalali
+            var jalal = JalaliDate.gregorianToJalali (yyyy, month+1,dd);
+
+            document.getElementById('monthnumber').innerHTML = jalal[2];
+            document.getElementById("mon").innerHTML = ConfObjj.language[lang].Shamsi[jalal[1]-1].m ;
+            document.getElementById('myyear').innerHTML = jalal[0];
+
+            var ghamar = (writeIslamicDate(0));
+
+            document.getElementById("myweek").innerHTML = " " + ConfObjj.language[lang].Ghamari[ghamar[1]].m + " " + ghamar[0] + " ";
+            document.getElementById("myweek").style.textAlign="center";
+            //alert(jalal[2]);
+          }
+
+          else if (ConfObj.preferences.calendar_type == 0){         //miladi         
+            document.getElementById('monthnumber').innerHTML = dd;
+            //alert(dd);
+            document.getElementById("mon").innerHTML = ConfObjj.language[lang].Month[month].m ;
+            document.getElementById('myyear').innerHTML = yyyy;
+            document.getElementById("myweek").innerHTML = ConfObjj.language[lang].W+ " "+ weekNumber;
+          }
+
+          else if (ConfObj.preferences.calendar_type == 3){         //moon ghamari
+            var ghamar = (writeIslamicDate(0));
+            document.getElementById('monthnumber').innerHTML = ghamar [0];
+            document.getElementById("mon").innerHTML = ConfObjj.language[lang].Ghamari[ghamar[1]].m ;
+            document.getElementById('myyear').innerHTML = ghamar [2];
+          }
+
+          var weekNumber = (new Date()).getWeek();
+
+        
+          
+          document.getElementById("rcondition").innerHTML = ConfObjj.language[lang].R;
+          document.getElementById("CWcondition").innerHTML = ConfObjj.language[lang].CWR;
+
+          }
+      }
+    }
+    rawFile.send(null);
+  /////////////////////////////////////
+ 	Date.prototype.getWeek = function() {
+ 	   // Create a copy of this date object  
+ 	   var target  = new Date(this.valueOf());  
+ 	   // ISO week date weeks start on monday, so correct the day number  
+ 	   var dayNr   = (this.getDay() + 6) % 7;  
+ 	   // Set the target to the thursday of this week so the  
+ 	   // target date is in the right year  
+ 	   target.setDate(target.getDate() - dayNr + 3);  
+ 	   // ISO 8601 states that week 1 is the week with january 4th in it  
+ 	   var jan4    = new Date(target.getFullYear(), 0, 4);  
+ 	   // Number of days between target date and january 4th  
+ 	   var dayDiff = (target - jan4) / 86400000;    
+ 	   if(new Date(target.getFullYear(), 0, 1).getDay()==0 ) { return 1 + Math.ceil(dayDiff / 7); }
+ 	   else if(new Date(target.getFullYear(), 0, 1).getDay()==1 ) { return 1 + Math.ceil(dayDiff / 7); }
+ 	   else if(new Date(target.getFullYear(), 0, 1).getDay()==2 ) { return 1 + Math.ceil(dayDiff / 7); }
+ 	   else if(new Date(target.getFullYear(), 0, 1).getDay()==3 ) { return 1 + Math.ceil(dayDiff / 7); }
+ 	   else if(new Date(target.getFullYear(), 0, 1).getDay()==4 ) { return 1 + Math.ceil(dayDiff / 7); }
+ 	   else { return Math.ceil(dayDiff / 7); }
+ 	}
+</script>
+
+<script id="Media">
+	var ConfObj;
+	function readTextFile(){
+	    file = document.location.pathname.substr(0,document.location.pathname.length - 15 ) + "myconfig.txt";
+	    var rawFile = new XMLHttpRequest();
+	    rawFile.open("GET", file, false);
+	    rawFile.onreadystatechange = function (){
+	      if(rawFile.readyState === 4){
+	        if(rawFile.status === 200 || rawFile.status == 0){
+	          var allText = rawFile.responseText;
+	          //alert(allText);
+	          ConfObj = JSON.parse(allText);
+	        }
+	      }
+	    }
+	    	rawFile.send(null);
+	}
+  	
+  	readTextFile();
+    setTimeout(function(){ readTextFile(); }, 61*1001);
+
+  	//alert(screen.availWidth);
+  	//1366
+  	//alert(screen.height);
+  	//768
+
+  	var i = 0 ;
+  	var path = new Array();
+  	var type;
+  	var slidetime = 5000;
+    if (ConfObj.preferences.language == "fa" || ConfObj.preferences.language == "Fa") {
+      document.getElementsByClassName('lines')[0].style.textAlign="right";
+      document.getElementsByClassName('lines')[1].style.textAlign="right";
+      document.getElementsByClassName('lines')[2].style.textAlign="right";
+      document.getElementsByClassName('lines')[3].style.textAlign="right";
+  }
+     
+  	adress=document.location.pathname.substr(0,document.location.pathname.length - 15 )+"Medias/";
+    //alert(adress);
+  	function swapMedia(){
+  		var type;
+		  var imagetime;
+		  var videotime;
+		  var mediatime;
+      //alert("here");
+		
+  		i++;
+  		if(i >= (ConfObj.medias).length) i = 0 ;
+  		path[i] = adress+ (i+1) + ConfObj.medias[i].media_url.substr(ConfObj.medias[i].media_url.length - 4 ,ConfObj.medias[i].media_url.length );
+  		var myimage = document.getElementById("myImage");
+  		var myvideo = document.getElementById("myVideo");
+  		
+  		if(ConfObj.medias[i].media_url.substr(ConfObj.medias[i].media_url.length - 4 ,ConfObj.medias[i].media_url.length ) == ".jpg"){
+
+        slidetime = ConfObj.preferences.slide_time*(1001);
+        
+        myvideo.style.visibility = "hidden";
+        myimage.style.visibility = "hidden";
+        myimage.setAttribute('src', path[i]);
+        myimage.addEventListener("load", function(){
+          var imagewidth,imageheight;
+          if (myimage.complete)myimage.style.visibility = "visible";
+          if(this.naturalHeight > this.naturalWidth){
+            imageheight = screen.width / 1.85;
+            imagewidth = (screen.width / 1.85)*this.naturalWidt/this.naturalHeight;            
+          }
+          else if(this.naturalHeight < this.naturalWidth){
+            imagewidth = screen.width / 1.85
+            imageheight = (screen.width / 1.85)*this.naturalHeight/this.naturalWidth;     
+          }     
+         
+          else{
+            imageheight = screen.width / 1.85;
+            imagewidth = screen.width / 1.85;
+          }
+         
+          myimage.setAttribute('width', imagewidth );
+          myimage.setAttribute('height', imageheight );
+
+            myimage.style.left = 18.5+ "%";
+            myimage.style.top = ( (screen.height - myimage.height ) /2.1 ) + "px";
+            document.getElementById('lineone').firstChild.nodeValue =ConfObj.medias[i].text1;
+            document.getElementById('linetwo').firstChild.nodeValue =ConfObj.medias[i].text2;
+            document.getElementById('linethree').firstChild.nodeValue =ConfObj.medias[i].text3;
+            document.getElementById('linefour').firstChild.nodeValue =ConfObj.medias[i].text4;
+        });
+
+        if ((ConfObj.medias).length==1) return;
+        setTimeout(function(){
+            swapMedia();
+          document.getElementById('here').firstChild.nodeValue = slidetime+"image"+i;
+         
+        }, slidetime);
+  		}  
+
+  		else if (ConfObj.medias[i].media_url.substr( ConfObj.medias[i].media_url.length - 4 ,ConfObj.medias[i].media_url.length ) == ".mp4"){
+        
+        myvideo.setAttribute('src', path[i]);
+        myvideo.style.visibility = "hidden";
+        myimage.style.visibility = "hidden";
+        myvideo.load();
+        myvideo.addEventListener("loadeddata", function(){
+          myvideo.style.visibility = "visible";
+          myVideo.setAttribute('width', this.videoWidth);
+          myVideo.setAttribute('height', this.videoHeight);
+          myvideo.style.left = ( (screen.width - myvideo.width ) /2.5) + "px";
+          myvideo.style.top = ( (screen.height - myvideo.height )/2.1 ) + "px";
+            
+          myvideo.play();
+          document.getElementById('lineone').firstChild.nodeValue =ConfObj.medias[i].text1;
+          document.getElementById('linetwo').firstChild.nodeValue =ConfObj.medias[i].text2;
+          document.getElementById('linethree').firstChild.nodeValue =ConfObj.medias[i].text3;
+          document.getElementById('linefour').firstChild.nodeValue =ConfObj.medias[i].text4;
+        });
+
+        myvideo.onended = function() {
+          setTimeout(function(){swapMedia();}, 1000);
+    //alert("The audio has ended");
+ };
+        //setTimeout(function(){swapMedia();}, slidetime);
+    	}
+ 		//setTimeout(function(){swapMedia(); }, slidetime);
+  	}
+
+
+    swapMedia();	
+</script> 
+
+<script id="weather_API_script">
+  var ConfObj;
+  function readTextFile(){
+    file = document.location.pathname.substr(0,document.location.pathname.length - 15 ) + "myconfig.txt";
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function (){
+      if(rawFile.readyState === 4){
+        if(rawFile.status === 200 || rawFile.status == 0){
+          var allText = rawFile.responseText; 
+          ConfObj = JSON.parse(allText);
+        }
+      }
+    }
+    rawFile.send(null);
+  }
+  readTextFile();
+  setTimeout(function(){ readTextFile(); }, 61*1001);
+  
+  var myurl = "http%3A%2F%2Fapi.worldweatheronline.com%2Ffree%2Fv2%2Fweather.ashx%3Fq%3D"+ConfObj.preferences.city+"%26format%3Djson%26num_of_days%3D1%26key%3Df793dd5de838b6be5b4a401294b09"
+
+  var url = decodeURIComponent(myurl);
+
+  function get_desc (api_desc_code,api_desc){
+
+    if(api_desc_code==395) {return "Heavy snow with thunder";}
+    else if (api_desc_code==392) {return "Light snow with thunder";}
+    else if (api_desc_code==389) {return "Heavy rain with thunder";}
+    else if (api_desc_code==386) {return "Light rain with thunder";}
+    else if (api_desc_code==377) {return "Heavy showers of ice pellets";}
+    else if (api_desc_code==371) {return "Heavy snow showers";}
+    else if (api_desc_code==365) {return "Heavy sleet showers";}
+    else if (api_desc_code==200) {return "Thundery outbreaks";}
+    else if (api_desc_code==185) {return "Freezing drizzle";}
+    else if (api_desc_code==314) {return "Heavy freezing rain";}
+    else if (api_desc_code==356) {return "Heavy rain shower";}
+
+    else return api_desc;
+  }
+
+  function get_svg(api_desc_code,MOR){
+    var adrs = document.location.pathname.substr(0,document.location.pathname.length - 15 )+"SVG white/";
+
+    //MOR==0 means morning;
+    //Clear/Sunny
+    if(api_desc_code==113){if(MOR==0) return adrs+"sun.svg"; else return adrs+"moon.svg";}
+    //Partly Cloudy
+    else if (api_desc_code==116) {if(MOR==0) return adrs+"cloud-sun.svg"; else return adrs+"cloud-moon.svg";}
+
+    //Cloudy
+    else if (api_desc_code==119) {return adrs+"cloud.svg";}
+
+    //Overcast
+    else if (api_desc_code==122) {return adrs+"cloud.svg";}
+
+    //Mist
+    else if (api_desc_code==143){return adrs+"cloud.svg";}
+
+    //Patchy Rain Nearby
+    else if (api_desc_code==176){if(MOR==0) return adrs+"rain-alt-sun.svg";else return adrs+"rain-alt-moon.svg";}
+
+    //Patchy snow nearby
+    else if (api_desc_code==176){if(MOR==0) return adrs+"snow-alt-sun.svg";else return adrs+"snow-alt-moon.svg";}
+
+    //Patchy sleet nearby
+    else if (api_desc_code==182){if(MOR==0) return adrs+"hail-sun.svg";else return adrs+"hail-moon.svg";}
+
+    //Patchy freezing drizzle nearby
+    else if (api_desc_code==185){if(MOR==0) return adrs+"drizzle-alt-sun.svg";else return adrs+"drizzle-alt-moon.svg";}
+
+    //Thundery outbreaks in nearby 
+    else if (api_desc_code==200){return adrs+"hurricane.svg";}
+
+    //Blowing Snow
+    else if (api_desc_code==227){if(MOR==0) return adrs+"cloud-wind-sun-snow.svg";else return adrs+"cloud-wind-moon-snow.svg";}
+
+    //Blizzard
+    else if (api_desc_code==230){return adrs+"hurrican.svg";}
+
+    //Fog
+    else if (api_desc_code==248){if(MOR==0) return adrs+"fog-sun.svg"; else return adrs+"fog-moon.svg"}
+
+    //Freezing Fog
+    else if (api_desc_code==260){return adrs+"fog.svg";}
+
+    //Patchy light drizzle
+    else if (api_desc_code==263){if(MOR==0) return adrs+"drizzle-alt-sun.svg"; else return adrs+"drizzle-alt-moon.svg";}
+
+    // Light drizzle
+    else if (api_desc_code==266){if(MOR==0) return adrs+"drizzle-sun.svg"; else return adrs+"drizzle-moon.svg";}
+  
+    // Freezing drizzle
+    else if (api_desc_code==281){if(MOR==0) return adrs+"drizzle-alt-sun.svg"; else return adrs+"drizzle-alt-moon.svg";}
+  
+    // Heavy freezing drizzle
+    else if (api_desc_code==284){if(MOR==0) return adrs+"drizzle-alt-sun.svg"; else return adrs+"drizzle-alt-moon.svg";}
+  
+    // Patchy light rain
+    else if (api_desc_code==293){if(MOR==0) return adrs+"rain-sun.svg";else return adrs+"rain-moon.svg";}
+  
+    // Light rain
+    else if (api_desc_code==296){if(MOR==0) return adrs+"rain-sun.svg";else return adrs+"rain-moon.svg";}
+  
+    // Moderate rain at times
+    else if (api_desc_code==299){if(MOR==0) return adrs+"rain-sun.svg";else return adrs+"rain-moon.svg";}
+  
+    // Moderate rain
+    else if (api_desc_code==302){if(MOR==0) return adrs+"rain-sun.svg";else return adrs+"rain-moon.svg";}
+  
+    // Heavy rain at times
+    else if (api_desc_code==305){if(MOR==0) return adrs+"rain-alt-sun.svg";else return adrs+"rain-alt-moon.svg";}
+  
+    // Heavy rain
+    else if (api_desc_code==308){if(MOR==0) return adrs+"rain-alt-sun.svg";else return adrs+"rain-alt-moon.svg";  }
+
+    // Light freezing rain
+    else if (api_desc_code==311){if(MOR==0) return adrs+"drizzle-alt-sun.svg"; else return adrs+"drizzle-alt-moon.svg"; }
+
+    // Moderate or Heavy freezing rain
+    else if (api_desc_code==314){if(MOR==0) return adrs+"drizzle-alt-sun.svg"; else return adrs+"drizzle-alt-moon.svg"; }
+
+    // Light sleet
+    else if (api_desc_code==317){if(MOR==0) return adrs+"hail-sun.svg";else return adrs+"hail-moon.svg";  }
+
+    // Moderate or heavy sleet
+    else if (api_desc_code==320){if(MOR==0) return adrs+"hail-sun.svg";else return adrs+"hail-moon.svg";  }
+
+    // Patchy light snow
+    else if (api_desc_code==323){if(MOR==0) return adrs+"snow-alt-sun.svg";else return adrs+"snow-alt-moon.svg";  }
+
+    // Light snow
+    else if (api_desc_code==326){if(MOR==0) return adrs+"snow-alt-sun.svg";else return adrs+"snow-alt-moon.svg";  }
+
+    // Patchy moderate snow
+    else if (api_desc_code==329){if(MOR==0) return adrs+"snow-alt-sun.svg";else return adrs+"snow-alt-moon.svg";  }
+
+    // Moderate snow
+    else if (api_desc_code==332){if(MOR==0) return adrs+"snow-alt-sun.svg";else return adrs+"snow-alt-moon.svg";}
+  
+    // Patchy heavy snow
+    else if (api_desc_code==335){if(MOR==0) return adrs+"snow-alt-sun.svg";else return adrs+"snow-alt-moon.svg";}
+  
+    // Heavy snow
+    else if (api_desc_code==338)return adrs+"snow-alt.svg";
+  
+    // Ice pellets
+    else if (api_desc_code==350){return adrs+"snow.svg";}
+  
+    // Light rain shower
+    else if (api_desc_code==353){if(MOR==0) return adrs+"rain-alt-sun.svg";else return adrs+"rain-alt-moon.svg";}
+  
+    // Moderate or heavy rain shower
+    else if (api_desc_code==356){if(MOR==0) return adrs+"rain-alt-sun.svg";else return adrs+"rain-alt-moon.svg";}
+  
+    // Torrential rain shower
+    else if (api_desc_code==359){if(MOR==0) return adrs+"rain-alt-sun.svg";else return adrs+"rain-alt-moon.svg";}
+  
+    // Light sleet showers
+    else if (api_desc_code==362){if(MOR==0)return adrs+"hail-sun.svg"; else return adrs+"hail-moon.svg" }
+
+    // Moderate or heavy sleet showers
+    else if (api_desc_code==365){return adrs+"hail.svg";  }
+
+    // Light snow showers
+    else if (api_desc_code==368){if(MOR==0) return adrs+"snow-alt-sun.svg"; else return adrs+"snow-alt-moon.svg"  }
+
+    // Moderate or heavy snow showers
+    else if (api_desc_code==371){return adrs+"snow-alt.svg";}
+
+    // Light showers of ice pellets
+    else if (api_desc_code==374){if(MOR==0) return adrs+"snow-sun.svg"; else return adrs+"snow-moon.svg"}
+  
+    // Moderate or heavy showers of ice pellets
+    else if (api_desc_code==377){return adrs+"snow.svg";}
+    
+    // Patchy light rain in area with thunder
+    else if (api_desc_code==386){if (MOR==0) return adrs+"rain-alt-sun.svg"; else return adrs+"rain-alt-moon.svg"}
+    
+    // Moderate or heavy rain in area with thunder
+    else if (api_desc_code==389){return adrs+"rain-alt.svg";}
+    
+    //Patchy light snow in area with thunder
+    else if (api_desc_code==392){if(MOR==0) return adrs+"snow-alt-sun.svg";else return adrs+"snow-alt-moon.svg";}
+
+    // Moderate or heavy snow in area with thunder
+    else if (api_desc_code==395){return adrs+"snow-alt.svg";}
+
+    else return adrs+"cloud-wind-sun-snow.svg";
+  }
+
+  var getJSON = function(url) {
+    return new Promise(function(resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', url, true);
+      xhr.responseType = 'json';
+      xhr.onload = function() {
+        var status = xhr.status;
+        if (status == 200) {
+          resolve(xhr.response);
+        } else {
+          reject(status);
+        }
+      };
+      xhr.send();
+    });
+  };
+ 
+  function update_api(){
+  getJSON(url).then(function(json){  
+
+    var MWSVG = document.getElementById("MW_svg");
+    var AWSVG = document.getElementById("AW_svg");
+    var EWSVG = document.getElementById("EW_svg");
+    var NWSVG = document.getElementById("NW_svg");
+    var CWSVG = document.getElementById("CW_svg");
+    ///////////////city
+    document.getElementById('mycity').firstChild.nodeValue = json.data.request[0].query;
+    ///////////////Morning
+    MWSVG.setAttribute('src',get_svg(json.data.weather[0].hourly[3].weatherCode,0));
+    document.getElementById('Mtemp').firstChild.nodeValue = json.data.weather[0].hourly[3].tempC+" °c";
+    document.getElementById('Mdesc').firstChild.nodeValue = get_desc(json.data.weather[0].hourly[3].weatherCode,json.data.weather[0].hourly[3].weatherDesc[0].value);
+    //alert(json.data.weather[0].hourly[3].tempC+" °c");
+    document.getElementById('MRH').firstChild.nodeValue = json.data.weather[0].hourly[3].humidity;
+    document.getElementById('Mfeel').firstChild.nodeValue = json.data.weather[0].hourly[3].FeelsLikeC;
+    document.getElementById('MwindS').firstChild.nodeValue = json.data.weather[0].hourly[3].windspeedKmph;
+
+    ///////////////Afternoon
+    AWSVG.setAttribute('src',get_svg(json.data.weather[0].hourly[4].weatherCode,0));
+    document.getElementById('Atemp').firstChild.nodeValue = json.data.weather[0].hourly[4].tempC+" °c";
+    document.getElementById('Adesc').firstChild.nodeValue = get_desc(json.data.weather[0].hourly[4].weatherCode,json.data.weather[0].hourly[4].weatherDesc[0].value);
+    document.getElementById('ARH').firstChild.nodeValue = json.data.weather[0].hourly[4].humidity;
+    document.getElementById('Afeel').firstChild.nodeValue = json.data.weather[0].hourly[4].FeelsLikeC;
+    document.getElementById('AwindS').firstChild.nodeValue = json.data.weather[0].hourly[4].windspeedKmph;
+
+    //////////////Evening
+    EWSVG.setAttribute('src',get_svg(json.data.weather[0].hourly[5].weatherCode,0));
+    document.getElementById('Etemp').firstChild.nodeValue = json.data.weather[0].hourly[5].tempC+" °c";
+    document.getElementById('Edesc').firstChild.nodeValue = get_desc(json.data.weather[0].hourly[5].weatherCode,json.data.weather[0].hourly[5].weatherDesc[0].value);
+    document.getElementById('ERH').firstChild.nodeValue = json.data.weather[0].hourly[5].humidity;
+    document.getElementById('Efeel').firstChild.nodeValue = json.data.weather[0].hourly[5].FeelsLikeC;
+    document.getElementById('EwindS').firstChild.nodeValue = json.data.weather[0].hourly[5].windspeedKmph;
+
+    //////////////Night
+    NWSVG.setAttribute('src',get_svg(json.data.weather[0].hourly[7].weatherCode,1));
+    document.getElementById('Ntemp').firstChild.nodeValue = json.data.weather[0].hourly[7].tempC+" °c";
+    document.getElementById('Ndesc').firstChild.nodeValue = get_desc(json.data.weather[0].hourly[7].weatherCode,json.data.weather[0].hourly[7].weatherDesc[0].value);
+    document.getElementById('NRH').firstChild.nodeValue = json.data.weather[0].hourly[7].humidity;
+    document.getElementById('Nfeel').firstChild.nodeValue = json.data.weather[0].hourly[7].FeelsLikeC;
+    document.getElementById('NwindS').firstChild.nodeValue = json.data.weather[0].hourly[7].windspeedKmph;
+    
+    //////////////current
+    var today = new Date();
+    var h = today.getHours();
+    var night=0;
+    if (h>16)night=1;
+
+    CWSVG.setAttribute('src',get_svg(json.data.current_condition[0].weatherCode,night));
+    
+    document.getElementById('Ctemp').firstChild.nodeValue =json.data.current_condition[0].temp_C;
+    document.getElementById('Cdesc').firstChild.nodeValue = get_desc(json.data.current_condition[0].weatherCode,json.data.current_condition[0].weatherDesc[0].value);
+    document.getElementById('CRH').firstChild.nodeValue = json.data.current_condition[0].humidity;
+    document.getElementById('Cfeel').firstChild.nodeValue = json.data.current_condition[0].FeelsLikeC;
+    document.getElementById('CwindS').firstChild.nodeValue = json.data.current_condition[0].windspeedKmph;
+    
+    }, function(status) {
+      alert('Something went wrong.');
+  });
+  }
+  update_api();
+ setInterval(function(){ update_api();},1000*60*17); // every 17 min 
+</script>
+
+
+
+</body>
+</html>
